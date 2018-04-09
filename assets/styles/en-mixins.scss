@@ -1,0 +1,45 @@
+@mixin circle
+{
+  border-radius: 100%;
+}
+
+@mixin centerer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+//SASS Mixin For Vertically Centering Elements With Unknown Heights
+
+@mixin centerChildren($child) {
+  text-align: center;
+  &:before {
+    content: '\200B';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .#{$child} {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

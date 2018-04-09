@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Eric's Mixins</h1>
+        <section class="mixin">
+            <h4>circle mixin</h4>
+            <div class="circle"></div>
+        </section>
+        <section class="mixin">
+            <div class="parent">
+                <div class="child center">centerer mixin</div>
+            </div>
+        </section>
+        <section class="mixin">
+            <div class="parent">
+                <div class="child both">I'm centered on both axis!</div>
+            </div>
+        </section>
+        <section class="mixin">
+            <div class="parent">
+                <div class="child horizontal">I'm centered horizontally!</div>
+            </div>
+        </section>
+        <section class="mixin">
+            <div class="parent">
+                <div class="child vertical">I'm centered vertically!</div>
+            </div>
+        </section>
+        <section class="mixin">
+            <div>SASS Mixin For Vertically Centering Elements With Unknown Heights</div>
+            <div class="container" style="height: 200px;">
+                <div class="container_child">
+                    <h1>Some Content</h1>
+                </div>
+            </div>
+            <div class="container" style="height: 250px;">
+                <div class="container_child">
+                    <h1>Some Content Some Content</h1>
+                    <h2>Some content</h2>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
