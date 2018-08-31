@@ -2,6 +2,8 @@
 // but allowing components to change
 // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
 @import 'en-mixins';
+@import './mixins/aspect-ratio';
+@import './mixins/responsive-type';
 
 html {
     box-sizing: border-box;
@@ -86,6 +88,44 @@ html {
     .container {
       width: 100%;
       margin: 20px 0;
+    }
+  }
+
+  // maintain an elements aspect ratio, even as it scales.
+
+  .box {
+    //animation: width 3s infinite alternate;
+    background-color: skyblue;
+  }
+  .box span {
+    color: black;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .sixteen-nine {
+    @include aspect-ratio(16, 9);
+  }
+
+  
+  @-webkit-keyframes width {
+    0% {
+      width: 25%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes width {
+    0% {
+      width: 25%;
+    }
+    100% {
+      width: 100%;
     }
   }
 
